@@ -3,10 +3,14 @@ Vue.component('vue-directives', {
                 `<div>
                         <p v-text="text"></p>
                         <a :href="link.href" :title="link.title" v-text="link.text"></a>
+                        <directive-hmtl></directive-hmtl>
+                        <DirectiveShow/>
+                        <DirectiveIf/>
                 </div>`,
         data() {
                 return {
-                        text: "texto prueba",
+                        title: "Vue.js Directives",
+                        text: "test text",
                         link: {
                                 text: "Vue Home",
                                 href: "https://vuejs.org",
@@ -15,4 +19,10 @@ Vue.component('vue-directives', {
                         }
                 }
         },
+        components: {
+                'directive-hmtl': DirectiveHtml,
+                //tabmien se puede de la siguiente manera
+                DirectiveShow,
+                DirectiveIf,
+        }
 })
